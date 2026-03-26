@@ -737,6 +737,7 @@
     display: none;
   }
 </style>
+<script data-goatcounter="https://elevationai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -1595,6 +1596,11 @@
     // Increment daily quota
     incrementQuota();
     updateQuotaDisplay();
+
+    // Track quote generated event in GoatCounter
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: 'quote-generated', title: 'Quote Generated', event: true });
+    }
   }
 
   // ── COPY ──
