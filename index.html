@@ -830,7 +830,13 @@
         </div>
         <div class="form-group">
           <label>Credit Rating</label>
-          <input type="text" id="f_credit" placeholder="Excellent">
+          <select id="f_credit" style="width:100%;padding:10px 12px;border:1px solid var(--medium-gray);border-radius:8px;font-size:15px;color:var(--navy);background:var(--white);transition:border 0.2s;cursor:pointer;">
+            <option value="Excellent">Excellent (750+)</option>
+            <option value="Good">Good (700–749)</option>
+            <option value="Fair">Fair (650–699)</option>
+            <option value="Below Average">Below Average (600–649)</option>
+            <option value="Poor">Poor (below 600)</option>
+          </select>
         </div>
       </div>
 
