@@ -1480,9 +1480,26 @@
     <div class="admin-card">
 
       <!-- Quota bar -->
-      <div id="quotaBar" style="display:flex;justify-content:space-between;align-items:center;background:var(--light-gray);border-radius:8px;padding:8px 12px;margin-bottom:16px;font-size:12px;color:var(--dark-gray)">
+      <div id="quotaBar" style="display:flex;justify-content:space-between;align-items:center;background:var(--light-gray);border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;color:var(--dark-gray)">
         <span>Quotes today: <strong id="quotaCount">0 / 10</strong></span>
         <button onclick="clearClientFields()" style="background:none;border:1px solid var(--medium-gray);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--dark-gray);cursor:pointer;font-weight:600">+ New Client</button>
+      </div>
+
+      <!-- Quick Fill Presets -->
+      <div style="margin-bottom:14px">
+        <div style="font-size:10px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">⚡ Quick Fill — tap a scenario to load all numbers</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+          <button onclick="quickFill('standard')" style="padding:9px 4px;background:var(--light-gray);border:1.5px solid var(--medium-gray);border-radius:8px;font-size:11px;font-weight:700;color:var(--navy);cursor:pointer;text-align:center;line-height:1.3;transition:all 0.15s" onmouseover="this.style.borderColor='#7B61FF';this.style.color='#7B61FF'" onmouseout="this.style.borderColor='var(--medium-gray)';this.style.color='var(--navy)'">
+            📉 Standard Refi<br><span style="font-size:9px;font-weight:400;color:#9CA3AF">7.25% → 6.25%</span>
+          </button>
+          <button onclick="quickFill('ratedrop')" style="padding:9px 4px;background:var(--light-gray);border:1.5px solid var(--medium-gray);border-radius:8px;font-size:11px;font-weight:700;color:var(--navy);cursor:pointer;text-align:center;line-height:1.3;transition:all 0.15s" onmouseover="this.style.borderColor='#7B61FF';this.style.color='#7B61FF'" onmouseout="this.style.borderColor='var(--medium-gray)';this.style.color='var(--navy)'">
+            🔥 Rate Drop<br><span style="font-size:9px;font-weight:400;color:#9CA3AF">7.875% → 5.75%</span>
+          </button>
+          <button onclick="quickFill('cashout')" style="padding:9px 4px;background:var(--light-gray);border:1.5px solid var(--medium-gray);border-radius:8px;font-size:11px;font-weight:700;color:var(--navy);cursor:pointer;text-align:center;line-height:1.3;transition:all 0.15s" onmouseover="this.style.borderColor='#7B61FF';this.style.color='#7B61FF'" onmouseout="this.style.borderColor='var(--medium-gray)';this.style.color='var(--navy)'">
+            💰 Cash-Out<br><span style="font-size:9px;font-weight:400;color:#9CA3AF">Pull equity out</span>
+          </button>
+        </div>
+        <div style="font-size:10px;color:#9CA3AF;margin-top:5px;text-align:center">Then just update client name + phone above ↑</div>
       </div>
 
       <!-- STEP 1: Client -->
@@ -2201,6 +2218,77 @@
     if (!isNaN(num) && num > 0 && num < 20) {
       el.value = num + '%';
     }
+  }
+
+  // ── QUICK FILL PRESETS ──
+  var PRESETS = {
+    standard: {
+      propval: '650000', cbal: '480000', crate: '7.25',
+      a_rate: '6.375', a_loan: '480000', a_cost: '500',
+      b_rate: '5.875', b_loan: '480000', b_cost: '4500',
+      term: '30', credit: 'Excellent'
+    },
+    ratedrop: {
+      propval: '750000', cbal: '580000', crate: '7.875',
+      a_rate: '6.25',  a_loan: '580000', a_cost: '0',
+      b_rate: '5.75',  b_loan: '580000', b_cost: '3500',
+      term: '30', credit: 'Good'
+    },
+    cashout: {
+      propval: '800000', cbal: '380000', crate: '6.5',
+      a_rate: '6.875', a_loan: '475000', a_cost: '2500',
+      b_rate: '6.625', b_loan: '500000', b_cost: '4000',
+      term: '30', credit: 'Excellent'
+    }
+  };
+
+  function quickFill(scenario) {
+    var p = PRESETS[scenario];
+    if (!p) return;
+
+    // Clear user-edited flags first
+    var aLoan = document.getElementById('f_a_loan');
+    var bLoan = document.getElementById('f_b_loan');
+    if (aLoan) delete aLoan.dataset.userEdited;
+    if (bLoan) delete bLoan.dataset.userEdited;
+
+    // Fill all fields
+    var map = {
+      f_propval: p.propval, f_cbal: p.cbal, f_crate: p.crate,
+      f_a_rate: p.a_rate,  f_a_loan: p.a_loan, f_a_cost: p.a_cost,
+      f_b_rate: p.b_rate,  f_b_loan: p.b_loan, f_b_cost: p.b_cost,
+      f_term: p.term
+    };
+    Object.keys(map).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = map[id];
+    });
+
+    // Credit score
+    var creditEl = document.getElementById('f_credit');
+    if (creditEl) {
+      for (var i = 0; i < creditEl.options.length; i++) {
+        if (creditEl.options[i].value === p.credit) {
+          creditEl.selectedIndex = i; break;
+        }
+      }
+    }
+
+    // Mark loan amounts as user-edited so they don't get overwritten
+    if (aLoan) aLoan.dataset.userEdited = '1';
+    if (bLoan) bLoan.dataset.userEdited = '1';
+
+    // Trigger auto-calc
+    autoCalcAll();
+
+    // Clear any previous link output and errors
+    document.getElementById('linkOutput').style.display = 'none';
+    document.getElementById('errorMsg').style.display = 'none';
+    document.getElementById('warnMsg').style.display = 'none';
+
+    // Focus name field
+    var nameEl = document.getElementById('f_name');
+    if (nameEl) { nameEl.focus(); nameEl.select(); }
   }
 
   // ── CLEAR CLIENT FIELDS ──
