@@ -1438,10 +1438,47 @@
     color: var(--accent);
     background: rgba(123,97,255,0.06);
   }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 9999;
+    display: flex;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .lang-btn {
+    padding: 6px 14px;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  .lang-btn.active {
+    background: linear-gradient(135deg, #6C3FB5, #8B5CF6);
+    color: #fff;
+    border-radius: 20px;
+  }
 </style>
 <script data-goatcounter="https://sanchezelevationai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
+
+<!-- Language Toggle -->
+<div class="lang-toggle" id="langToggle" style="display:none">
+  <button class="lang-btn active" onclick="setLang('en')" id="langEN">EN</button>
+  <button class="lang-btn" onclick="setLang('es')" id="langES">ES</button>
+</div>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- ACCESS GATE                               -->
@@ -1531,6 +1568,24 @@
         </div>
       </div>
 
+      <div class="form-row">
+        <div class="form-group">
+          <label>Loan Type</label>
+          <select id="f_loantype" style="width:100%;padding:10px 12px;border:1px solid var(--medium-gray);border-radius:8px;font-size:15px;color:var(--navy);background:var(--white);cursor:pointer;">
+            <option value="Conventional">Conventional</option>
+            <option value="FHA">FHA</option>
+            <option value="VA">VA</option>
+            <option value="USDA">USDA</option>
+            <option value="Jumbo">Jumbo</option>
+            <option value="Non-QM">Non-QM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Loan Term</label>
+          <input type="text" id="f_term" placeholder="30" inputmode="numeric" value="30" style="width:100%;padding:8px 10px;border:1px solid var(--medium-gray);border-radius:8px;font-size:15px;font-weight:700;color:var(--navy)">
+        </div>
+      </div>
+
       <!-- STEP 2: Current Loan -->
       <div class="form-step-label">② Their Current Loan</div>
       <div class="form-row">
@@ -1597,12 +1652,6 @@
           </div>
           <div id="savingsPreviewB" style="font-size:11px;font-weight:700;color:var(--green);display:none;text-align:center;margin-top:4px;padding:2px 0"></div>
         </div>
-      </div>
-
-      <!-- Term -->
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-        <label style="font-size:12px;color:var(--dark-gray);white-space:nowrap">Term (years):</label>
-        <input type="text" id="f_term" placeholder="30" inputmode="numeric" value="30" style="width:70px;padding:8px 10px;border:1px solid var(--medium-gray);border-radius:8px;font-size:15px;font-weight:700;color:var(--navy)">
       </div>
 
       <!-- Hidden agent fields (persisted via localStorage) -->
@@ -1679,19 +1728,19 @@
 
   <div class="header">
     <div class="logo-text">West Capital Lending</div>
-    <div class="logo-sub">Personalized Quote</div>
+    <div class="logo-sub" data-i18n="personalizedQuote">Personalized Quote</div>
   </div>
 
   <div class="greeting">
-    <h1 id="greetingName">Your Custom Quote</h1>
-    <p>Here's exactly how much you could be saving</p>
+    <h1 id="greetingName" data-i18n="yourCustomQuote">Your Custom Quote</h1>
+    <p data-i18n="hereIsHowMuch">Here's exactly how much you could be saving</p>
     <div class="expiry-badge">
       <div class="expiry-dot"></div>
-      <span id="expiryText">Rates valid for 72 hours</span>
+      <span id="expiryText" data-i18n="ratesValid">Rates valid for 72 hours</span>
     </div>
     <!-- Countdown timer -->
     <div class="countdown-wrap" id="countdownWrap">
-      <div style="font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px">Rate lock expires in</div>
+      <div style="font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px" data-i18n="rateLockExpires">Rate lock expires in</div>
       <div class="countdown-timer">
         <div class="countdown-block"><span class="countdown-num" id="cdHours">--</span><span class="countdown-lbl">hrs</span></div>
         <div class="countdown-sep">:</div>
@@ -1717,7 +1766,7 @@
   <div class="equity-section">
     <div class="equity-bar-wrap">
       <div class="equity-bar-label">
-        <span>Your Home Equity Position</span>
+        <span data-i18n="homeEquityPosition">Your Home Equity Position</span>
         <span id="equityPct" style="color:var(--green)">—</span>
       </div>
       <div class="equity-bar-track">
@@ -1733,36 +1782,40 @@
   <!-- Property Snapshot -->
   <div class="snapshot">
     <div class="snap-card">
-      <div class="snap-label">Property Value</div>
+      <div class="snap-label" data-i18n="propertyValue">Property Value</div>
       <div class="snap-value" id="qPropVal">—</div>
     </div>
     <div class="snap-card">
-      <div class="snap-label">Available Equity</div>
+      <div class="snap-label" data-i18n="availableEquity">Available Equity</div>
       <div class="snap-value equity" id="qEquity">—</div>
     </div>
     <div class="snap-card">
-      <div class="snap-label">Credit Rating</div>
+      <div class="snap-label" data-i18n="creditRating">Credit Rating</div>
       <div class="snap-value text-val" id="qCredit">—</div>
     </div>
     <div class="snap-card">
-      <div class="snap-label">Loan Term</div>
+      <div class="snap-label" data-i18n="loanType">Loan Type</div>
+      <div class="snap-value text-val" id="qLoanType">—</div>
+    </div>
+    <div class="snap-card">
+      <div class="snap-label" data-i18n="loanTerm">Loan Term</div>
       <div class="snap-value text-val" id="qTerm">—</div>
     </div>
   </div>
 
   <!-- Option A / B Toggle -->
   <div class="option-toggle-wrap">
-    <div class="option-toggle-label">Choose Your Priority</div>
+    <div class="option-toggle-label" data-i18n="chooseYourPriority">Choose Your Priority</div>
     <div class="option-toggle">
       <button class="option-btn active" id="optABtn" onclick="setOption('A')">
-        <div class="recommended-badge" id="recBadgeA">Lower Upfront Cost</div>
-        Lower Cost
-        <span>Minimize upfront costs</span>
+        <div class="recommended-badge" id="recBadgeA" data-i18n="lowerUpfrontCost">Lower Upfront Cost</div>
+        <span data-i18n="lowerCost">Lower Cost</span>
+        <span data-i18n="minimizeUpfront">Minimize upfront costs</span>
       </button>
       <button class="option-btn" id="optBBtn" onclick="setOption('B')">
-        <div class="recommended-badge" id="recBadgeB">Best Rate</div>
-        Lower Rate
-        <span>Save more over time</span>
+        <div class="recommended-badge" id="recBadgeB" data-i18n="bestRate">Best Rate</div>
+        <span data-i18n="lowerRate">Lower Rate</span>
+        <span data-i18n="saveMoreOverTime">Save more over time</span>
       </button>
     </div>
   </div>
@@ -1770,38 +1823,38 @@
   <!-- Side-by-Side Comparison -->
   <div class="comparison reveal">
     <div class="loan-card current">
-      <div class="card-title">Current Loan</div>
+      <div class="card-title" data-i18n="currentLoan">Current Loan</div>
       <div class="card-row">
-        <div class="card-row-label">Balance</div>
+        <div class="card-row-label" data-i18n="balance">Balance</div>
         <div class="card-row-value" id="qCurBal">—</div>
       </div>
       <div class="card-row">
-        <div class="card-row-label">Interest Rate</div>
+        <div class="card-row-label" data-i18n="interestRate">Interest Rate</div>
         <div class="card-row-value rate" id="qCurRate">—</div>
       </div>
       <div class="card-row" style="margin-bottom:0">
-        <div class="card-row-label">Monthly Payment</div>
+        <div class="card-row-label" data-i18n="monthlyPayment">Monthly Payment</div>
         <div class="card-row-value payment" id="qCurPay">—</div>
       </div>
     </div>
     <div class="loan-card new-loan">
-      <div class="card-title new-title">New Loan</div>
+      <div class="card-title new-title" data-i18n="newLoan">New Loan</div>
       <div class="card-row">
-        <div class="card-row-label">Loan Amount</div>
+        <div class="card-row-label" data-i18n="loanAmount">Loan Amount</div>
         <div class="card-row-value" id="qNewBal">—</div>
       </div>
       <div class="card-row">
-        <div class="card-row-label">Interest Rate</div>
+        <div class="card-row-label" data-i18n="interestRate">Interest Rate</div>
         <div class="card-row-value rate" id="qNewRate">—</div>
         <div class="rate-diff" id="qRateDiff">—</div>
       </div>
       <div class="card-row">
-        <div class="card-row-label">Monthly Payment</div>
+        <div class="card-row-label" data-i18n="monthlyPayment">Monthly Payment</div>
         <div class="card-row-value payment" id="qNewPay">—</div>
         <div class="savings-badge" id="qSaveBadge">↓ —/mo</div>
       </div>
       <div class="card-row" style="margin-bottom:0" id="qCostRow">
-        <div class="card-row-label">Closing Costs</div>
+        <div class="card-row-label" data-i18n="closingCosts">Closing Costs</div>
         <div class="card-row-value" id="qNewCost" style="font-size:16px">—</div>
       </div>
     </div>
@@ -1810,14 +1863,14 @@
   <!-- Savings -->
   <div class="savings-section">
     <div class="savings-card">
-      <div class="savings-label">Your Monthly Savings</div>
+      <div class="savings-label" data-i18n="yourMonthlySavings">Your Monthly Savings</div>
       <div class="savings-monthly count-anim" id="qSaveMonth">—</div>
-      <div class="savings-monthly-label">per month back in your pocket</div>
+      <div class="savings-monthly-label" data-i18n="perMonthBack">per month back in your pocket</div>
 
       <div class="time-toggle">
-        <button class="time-btn active" onclick="setTime(1, this)">1 Year</button>
-        <button class="time-btn" onclick="setTime(5, this)">5 Years</button>
-        <button class="time-btn" onclick="setTime(0, this)">Full Loan</button>
+        <button class="time-btn active" onclick="setTime(1, this)" data-i18n="oneYear">1 Year</button>
+        <button class="time-btn" onclick="setTime(5, this)" data-i18n="fiveYears">5 Years</button>
+        <button class="time-btn" onclick="setTime(0, this)" data-i18n="fullLoan">Full Loan</button>
       </div>
 
       <div class="savings-total-value count-anim" id="qSaveTotal">—</div>
@@ -2226,19 +2279,19 @@
       propval: '650000', cbal: '480000', crate: '7.25',
       a_rate: '6.375', a_loan: '480000', a_cost: '500',
       b_rate: '5.875', b_loan: '480000', b_cost: '4500',
-      term: '30', credit: 'Excellent'
+      term: '30', credit: 'Excellent', loantype: 'Conventional'
     },
     ratedrop: {
       propval: '750000', cbal: '580000', crate: '7.875',
       a_rate: '6.25',  a_loan: '580000', a_cost: '0',
       b_rate: '5.75',  b_loan: '580000', b_cost: '3500',
-      term: '30', credit: 'Good'
+      term: '30', credit: 'Good', loantype: 'FHA'
     },
     cashout: {
       propval: '800000', cbal: '380000', crate: '6.5',
       a_rate: '6.875', a_loan: '475000', a_cost: '2500',
       b_rate: '6.625', b_loan: '500000', b_cost: '4000',
-      term: '30', credit: 'Excellent'
+      term: '30', credit: 'Excellent', loantype: 'Conventional'
     }
   };
 
@@ -2273,6 +2326,10 @@
         }
       }
     }
+
+    // Loan type
+    var ltEl = document.getElementById('f_loantype');
+    if (ltEl && p.loantype) { for (var j=0;j<ltEl.options.length;j++) { if (ltEl.options[j].value===p.loantype){ltEl.selectedIndex=j;break;} } }
 
     // Mark loan amounts as user-edited so they don't get overwritten
     if (aLoan) aLoan.dataset.userEdited = '1';
@@ -2473,6 +2530,7 @@
       nmls:    p.nmls  || '',
       propVal: parseFloat(p.pv)    || 0,
       credit:  p.cr    || 'Excellent',
+      loanType: p.lt   || 'Conventional',
       curBal:  parseFloat(p.cb)    || 0,
       curRate: parseFloat(p.crate) || 0,
       curPay:  parseFloat(p.cpay)  || 0,
@@ -2509,6 +2567,7 @@
     document.getElementById('qPropVal').textContent = fmt(quoteData.propVal);
     document.getElementById('qEquity').textContent  = fmt(equity);
     document.getElementById('qCredit').textContent  = quoteData.credit;
+    document.getElementById('qLoanType').textContent = quoteData.loanType;
     document.getElementById('qTerm').textContent    = quoteData.term + ' Years';
 
     // Current loan
@@ -2762,6 +2821,7 @@
       nmls:  nmls,
       pv:    cleanNum(g('f_propval')),
       cr:    g('f_credit') || 'Excellent',
+      lt:    g('f_loantype') || 'Conventional',
       cb:    cleanNum(g('f_cbal')),
       crate: cleanNum(g('f_crate')),
       cpay:  curPay,
