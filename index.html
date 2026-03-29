@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>West Capital Lending - Your Personalized Quote</title>
@@ -1687,7 +1695,7 @@
       </div>
 
       <!-- Generate -->
-      <button class="generate-btn" onclick="generateLink()" style="margin-top:12px;font-size:17px;padding:16px;letter-spacing:1px">⚡ Generate Quote Link</button>
+      <button class="generate-btn" onclick="generateLink();gtag('event','quote_generated',{'event_category':'engagement','event_label':'quote_tool'})" style="margin-top:12px;font-size:17px;padding:16px;letter-spacing:1px">⚡ Generate Quote Link</button>
 
       <div class="quota-msg" id="quotaMsg"></div>
       <div class="error-msg" id="errorMsg"></div>
@@ -1695,10 +1703,10 @@
 
       <div class="link-output" id="linkOutput">
         <textarea id="linkText" readonly></textarea>
-        <button class="copy-btn" id="copyBtn" onclick="copyLink()">📋 Copy Link</button>
+        <button class="copy-btn" id="copyBtn" onclick="copyLink();gtag('event','quote_shared',{'event_category':'engagement','event_label':'share_button'})">📋 Copy Link</button>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-          <button class="copy-btn" onclick="shareViaSMS()" style="background:#1D4ED8;margin:0;font-size:14px;padding:12px">📱 Text Client</button>
-          <button class="copy-btn" onclick="shareViaWhatsApp()" style="background:#25D366;margin:0;font-size:14px;padding:12px">💬 WhatsApp</button>
+          <button class="copy-btn" onclick="shareViaSMS();gtag('event','quote_shared',{'event_category':'engagement','event_label':'share_button'})" style="background:#1D4ED8;margin:0;font-size:14px;padding:12px">📱 Text Client</button>
+          <button class="copy-btn" onclick="shareViaWhatsApp();gtag('event','quote_shared',{'event_category':'engagement','event_label':'share_button'})" style="background:#25D366;margin:0;font-size:14px;padding:12px">💬 WhatsApp</button>
         </div>
         <a class="preview-link" id="previewLink" target="_blank">Preview as Client →</a>
       </div>
@@ -1723,7 +1731,7 @@
       <div class="sticky-bar-save" id="stickySave">Save $— /mo</div>
       <div data-i18n="lockInYourRate">Lock in your rate before it expires</div>
     </div>
-    <a class="sticky-bar-btn" id="stickyBtn" href="#">📞 Call Manny</a>
+    <a class="sticky-bar-btn" id="stickyBtn" href="#" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'contact'})">📞 Call Manny</a>
   </div>
 
   <div class="header">
@@ -1972,7 +1980,7 @@
         <span class="closer-row-value big" id="closerYears">—</span>
       </div>
 
-      <a class="closer-cta" id="closerCtaBtn" href="#">
+      <a class="closer-cta" id="closerCtaBtn" href="#" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'contact'})">
         📞 <span id="closerCtaText">Call Manny — Lock In Your Rate</span>
       </a>
       <div style="text-align:center;font-size:11px;color:#6B7280;margin-top:10px" data-i18n="noObligation">No obligation &bull; Free consultation &bull; Takes 10 minutes</div>
@@ -3245,6 +3253,9 @@
     if (window.goatcounter && window.goatcounter.count) {
       window.goatcounter.count({ path: 'quote-generated', title: 'Quote Generated', event: true });
     }
+
+    // Track quote generated event in GA4
+    gtag('event', 'quote_generated', {'event_category': 'engagement', 'value': 1});
   }
 
   // ── ACCELERATED PAYOFF ──
