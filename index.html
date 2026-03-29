@@ -1721,7 +1721,7 @@
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-bar-text">
       <div class="sticky-bar-save" id="stickySave">Save $— /mo</div>
-      <div>Lock in your rate before it expires</div>
+      <div data-i18n="lockInYourRate">Lock in your rate before it expires</div>
     </div>
     <a class="sticky-bar-btn" id="stickyBtn" href="#">📞 Call Manny</a>
   </div>
@@ -1885,8 +1885,8 @@
       <div class="accel-header">
         <div class="accel-icon">📊</div>
         <div>
-          <div class="accel-title">Closing Cost Breakeven</div>
-          <div class="accel-sub">Your monthly savings cover the closing costs in just <strong id="breakevenMonths" style="color:var(--accent)">—</strong></div>
+          <div class="accel-title" data-i18n="closingCostBreakeven">Closing Cost Breakeven</div>
+          <div class="accel-sub" id="breakevenSubText">Your monthly savings cover the closing costs in just <strong id="breakevenMonths" style="color:var(--accent)">—</strong></div>
         </div>
       </div>
       <div style="background:var(--light-gray);border-radius:10px;padding:14px;margin-bottom:12px">
@@ -1902,15 +1902,15 @@
       </div>
       <div class="accel-result">
         <div class="accel-result-row">
-          <span>Total cost — current loan</span>
+          <span data-i18n="totalCostCurrentLoan">Total cost — current loan</span>
           <strong id="totalCostCurrent" style="color:var(--red)">—</strong>
         </div>
         <div class="accel-result-row">
-          <span>Total cost — new loan</span>
+          <span data-i18n="totalCostNewLoan">Total cost — new loan</span>
           <strong id="totalCostNew" style="color:var(--green)">—</strong>
         </div>
         <div class="accel-result-row">
-          <span>Net lifetime savings</span>
+          <span data-i18n="netLifetimeSavings">Net lifetime savings</span>
           <strong id="totalCostDiff" style="color:var(--green);font-size:18px">—</strong>
         </div>
       </div>
@@ -1923,21 +1923,21 @@
       <div class="waiting-header">
         <div class="waiting-icon">⏰</div>
         <div>
-          <div class="waiting-title">Every Month You Wait Costs You Money</div>
+          <div class="waiting-title" data-i18n="everyMonthYouWait">Every Month You Wait Costs You Money</div>
           <div class="waiting-sub" id="waitingSub">You're overpaying on your mortgage right now.</div>
         </div>
       </div>
       <div class="waiting-grid">
         <div class="waiting-box">
-          <div class="waiting-box-label">1 Month</div>
+          <div class="waiting-box-label" data-i18n="oneMonth">1 Month</div>
           <div class="waiting-box-value" id="wait1mo">—</div>
         </div>
         <div class="waiting-box">
-          <div class="waiting-box-label">3 Months</div>
+          <div class="waiting-box-label" data-i18n="threeMonths">3 Months</div>
           <div class="waiting-box-value" id="wait3mo">—</div>
         </div>
         <div class="waiting-box">
-          <div class="waiting-box-label">6 Months</div>
+          <div class="waiting-box-label" data-i18n="sixMonths">6 Months</div>
           <div class="waiting-box-value" id="wait6mo">—</div>
         </div>
       </div>
@@ -1948,34 +1948,34 @@
   <!-- THE CLOSER — Decision Summary -->
   <div class="closer-section reveal" id="closerSection">
     <div class="closer-card">
-      <div class="closer-title">Your numbers don't lie</div>
+      <div class="closer-title" data-i18n="yourNumbersDontLie">Your numbers don't lie</div>
       <div class="closer-headline" id="closerHeadline">Refinancing saves you <span id="closerLifetime" style="color:#4ADE80">—</span> over the life of your loan.</div>
 
       <div class="closer-row">
-        <span class="closer-row-label">Monthly savings</span>
+        <span class="closer-row-label" data-i18n="monthlySavings">Monthly savings</span>
         <span class="closer-row-value" id="closerMonthly">—</span>
       </div>
       <div class="closer-row">
-        <span class="closer-row-label">Annual savings</span>
+        <span class="closer-row-label" data-i18n="annualSavings">Annual savings</span>
         <span class="closer-row-value" id="closerAnnual">—</span>
       </div>
       <div class="closer-row">
-        <span class="closer-row-label">5-year savings</span>
+        <span class="closer-row-label" data-i18n="fiveYearSavings">5-year savings</span>
         <span class="closer-row-value" id="closer5yr">—</span>
       </div>
       <div class="closer-row">
-        <span class="closer-row-label">Total interest saved</span>
+        <span class="closer-row-label" data-i18n="totalInterestSaved">Total interest saved</span>
         <span class="closer-row-value" id="closerInterest">—</span>
       </div>
       <div class="closer-row">
-        <span class="closer-row-label">Years cut off your loan</span>
+        <span class="closer-row-label" data-i18n="yearsCutOff">Years cut off your loan</span>
         <span class="closer-row-value big" id="closerYears">—</span>
       </div>
 
       <a class="closer-cta" id="closerCtaBtn" href="#">
         📞 <span id="closerCtaText">Call Manny — Lock In Your Rate</span>
       </a>
-      <div style="text-align:center;font-size:11px;color:#6B7280;margin-top:10px">No obligation &bull; Free consultation &bull; Takes 10 minutes</div>
+      <div style="text-align:center;font-size:11px;color:#6B7280;margin-top:10px" data-i18n="noObligation">No obligation &bull; Free consultation &bull; Takes 10 minutes</div>
     </div>
   </div>
 
@@ -1985,29 +1985,29 @@
       <div class="accel-header">
         <div class="accel-icon">⚡</div>
         <div>
-          <div class="accel-title">What If You Keep Paying the Same Amount?</div>
-          <div class="accel-sub">You save <span id="accelMonthlySave">—</span>/mo with the new loan. But what if you kept making your current payment?</div>
+          <div class="accel-title" data-i18n="whatIfKeepPaying">What If You Keep Paying the Same Amount?</div>
+          <div class="accel-sub" id="accelSubText">You save <span id="accelMonthlySave">—</span>/mo with the new loan. But what if you kept making your current payment?</div>
         </div>
       </div>
       <div class="accel-grid">
         <div class="accel-box">
-          <div class="accel-box-label">Standard Payoff</div>
+          <div class="accel-box-label" data-i18n="standardPayoff">Standard Payoff</div>
           <div class="accel-box-value" id="accelStdYears">—</div>
-          <div class="accel-box-sub">at new payment</div>
+          <div class="accel-box-sub" data-i18n="atNewPayment">at new payment</div>
         </div>
         <div class="accel-box accel-box-highlight">
-          <div class="accel-box-label">Accelerated Payoff</div>
+          <div class="accel-box-label" data-i18n="acceleratedPayoff">Accelerated Payoff</div>
           <div class="accel-box-value" id="accelAccelYears">—</div>
-          <div class="accel-box-sub">keeping old payment</div>
+          <div class="accel-box-sub" data-i18n="keepingOldPayment">keeping old payment</div>
         </div>
       </div>
       <div class="accel-result">
         <div class="accel-result-row">
-          <span>Time saved off loan</span>
+          <span data-i18n="timeSavedOffLoan">Time saved off loan</span>
           <strong id="accelYearsSaved">—</strong>
         </div>
         <div class="accel-result-row">
-          <span>Interest saved</span>
+          <span data-i18n="interestSaved">Interest saved</span>
           <strong id="accelIntSaved" style="color:var(--green)">—</strong>
         </div>
       </div>
@@ -2021,7 +2021,7 @@
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:6px">
         <div style="font-size:28px;line-height:1.1">📉</div>
         <div>
-          <div class="chart-title">Loan Balance Over Time</div>
+          <div class="chart-title" data-i18n="loanBalanceOverTime">Loan Balance Over Time</div>
           <div class="chart-sub">Watch your balance drop faster month by month — the gap below is money you keep.</div>
         </div>
       </div>
@@ -2043,9 +2043,9 @@
   <!-- ── INVESTMENT PROJECTOR ── -->
   <div class="invest-section reveal" id="investSection">
     <div class="invest-card">
-      <div class="invest-header-label">💰 What If You Invested Your Savings?</div>
-      <div class="invest-title">Your <span id="investMonthly" style="color:#4ADE80">$—/mo</span> savings, invested over time:</div>
-      <div class="invest-sub">Instead of overpaying your current mortgage, put that money to work. Here's what it compounds to.</div>
+      <div class="invest-header-label" data-i18n="investHeaderLabel">💰 What If You Invested Your Savings?</div>
+      <div class="invest-title" data-i18n-html="investTitle">Your <span id="investMonthly" style="color:#4ADE80">$—/mo</span> savings, invested over time:</div>
+      <div class="invest-sub" data-i18n="investSub">Instead of overpaying your current mortgage, put that money to work. Here's what it compounds to.</div>
       <table class="invest-table">
         <thead>
           <tr>
@@ -2069,13 +2069,13 @@
       <div class="powerpay-header">
         <div class="powerpay-icon">🎯</div>
         <div>
-          <div class="powerpay-title">Power Pay — Crush Your Mortgage</div>
-          <div class="powerpay-sub">Add any extra amount each month and watch your payoff date move in real time.</div>
+          <div class="powerpay-title" data-i18n="powerPayTitle">Power Pay — Crush Your Mortgage</div>
+          <div class="powerpay-sub" data-i18n="powerPaySub">Add any extra amount each month and watch your payoff date move in real time.</div>
         </div>
       </div>
       <div class="powerpay-slider-wrap">
         <div class="powerpay-slider-top">
-          <span class="powerpay-slider-label">Extra payment per month</span>
+          <span class="powerpay-slider-label" data-i18n="extraPaymentPerMonth">Extra payment per month</span>
           <span class="powerpay-amount" id="powerPayAmount">+$0</span>
         </div>
         <input type="range" class="powerpay-slider" id="powerPaySlider" min="0" max="500" step="25" value="0">
@@ -2089,11 +2089,11 @@
       </div>
       <div class="powerpay-result">
         <div class="powerpay-row">
-          <span>Standard payoff</span>
+          <span data-i18n="standardPayoffLabel">Standard payoff</span>
           <strong id="ppStdPayoff">—</strong>
         </div>
         <div class="powerpay-row">
-          <span>With extra payment</span>
+          <span data-i18n="withExtraPayment">With extra payment</span>
           <span class="pp-accel" id="ppAccelPayoff">—</span>
         </div>
         <div class="powerpay-row">
@@ -2112,18 +2112,18 @@
   <!-- Next Steps -->
   <div class="next-steps">
     <div class="next-steps-card">
-      <div class="next-steps-title">What Happens Next</div>
+      <div class="next-steps-title" data-i18n="whatHappensNext">What Happens Next</div>
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>10-minute call</strong> — Manny confirms your details and locks in your rate</div>
+        <div class="step-text" id="stepText1"><strong>10-minute call</strong> — Manny confirms your details and locks in your rate</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text"><strong>Send 3 documents</strong> — W2, paystub, and last 2 bank statements</div>
+        <div class="step-text" id="stepText2"><strong>Send 3 documents</strong> — W2, paystub, and last 2 bank statements</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text"><strong>Close in 2–3 weeks</strong> — your savings start on your very first payment</div>
+        <div class="step-text" id="stepText3"><strong>Close in 2–3 weeks</strong> — your savings start on your very first payment</div>
       </div>
     </div>
   </div>
@@ -2152,6 +2152,377 @@
   var quoteData = {};
   var currentOption = 'A';
   var currentYears = 1;
+  var currentLang = 'en';
+
+  // ══════════════════════════════════════════
+  // TRANSLATIONS — Quote View (client-facing)
+  // ══════════════════════════════════════════
+  var TRANSLATIONS = {
+    en: {
+      personalizedQuote: 'Personalized Quote',
+      yourCustomQuote: 'Your Custom Quote',
+      hereIsHowMuch: "Here's exactly how much you could be saving",
+      ratesValid: 'Rates valid for 72 hours',
+      rateLockExpires: 'Rate lock expires in',
+      homeEquityPosition: 'Your Home Equity Position',
+      propertyValue: 'Property Value',
+      availableEquity: 'Available Equity',
+      creditRating: 'Credit Rating',
+      loanType: 'Loan Type',
+      loanTerm: 'Loan Term',
+      chooseYourPriority: 'Choose Your Priority',
+      lowerUpfrontCost: 'Lower Upfront Cost',
+      lowerCost: 'Lower Cost',
+      minimizeUpfront: 'Minimize upfront costs',
+      bestRate: 'Best Rate',
+      lowerRate: 'Lower Rate',
+      saveMoreOverTime: 'Save more over time',
+      currentLoan: 'Current Loan',
+      newLoan: 'New Loan',
+      balance: 'Balance',
+      interestRate: 'Interest Rate',
+      monthlyPayment: 'Monthly Payment',
+      loanAmount: 'Loan Amount',
+      closingCosts: 'Closing Costs',
+      yourMonthlySavings: 'Your Monthly Savings',
+      perMonthBack: 'per month back in your pocket',
+      oneYear: '1 Year',
+      fiveYears: '5 Years',
+      fullLoan: 'Full Loan',
+      closingCostBreakeven: 'Closing Cost Breakeven',
+      totalCostCurrentLoan: 'Total cost \u2014 current loan',
+      totalCostNewLoan: 'Total cost \u2014 new loan',
+      netLifetimeSavings: 'Net lifetime savings',
+      everyMonthYouWait: 'Every Month You Wait Costs You Money',
+      oneMonth: '1 Month',
+      threeMonths: '3 Months',
+      sixMonths: '6 Months',
+      yourNumbersDontLie: "Your numbers don't lie",
+      monthlySavings: 'Monthly savings',
+      annualSavings: 'Annual savings',
+      fiveYearSavings: '5-year savings',
+      totalInterestSaved: 'Total interest saved',
+      yearsCutOff: 'Years cut off your loan',
+      noObligation: 'No obligation \u2022 Free consultation \u2022 Takes 10 minutes',
+      whatIfKeepPaying: 'What If You Keep Paying the Same Amount?',
+      standardPayoff: 'Standard Payoff',
+      acceleratedPayoff: 'Accelerated Payoff',
+      atNewPayment: 'at new payment',
+      keepingOldPayment: 'keeping old payment',
+      timeSavedOffLoan: 'Time saved off loan',
+      interestSaved: 'Interest saved',
+      loanBalanceOverTime: 'Loan Balance Over Time',
+      investHeaderLabel: '\uD83D\uDCB0 What If You Invested Your Savings?',
+      investSub: "Instead of overpaying your current mortgage, put that money to work. Here's what it compounds to.",
+      powerPayTitle: 'Power Pay \u2014 Crush Your Mortgage',
+      powerPaySub: 'Add any extra amount each month and watch your payoff date move in real time.',
+      extraPaymentPerMonth: 'Extra payment per month',
+      standardPayoffLabel: 'Standard payoff',
+      withExtraPayment: 'With extra payment',
+      whatHappensNext: 'What Happens Next',
+      lockInYourRate: 'Lock in your rate before it expires',
+      // Dynamic text used in JS render functions
+      perMonth: 'per month',
+      perYear: 'per year',
+      years: 'years',
+      totalSavingsOver1Year: 'Total savings over 1 year',
+      totalSavingsOverXYears: 'Total savings over {x} years',
+      totalSavingsOverLoan: 'Total savings over the life of the loan',
+      everyDayYouWait: 'Every day you wait:',
+      gone: 'gone.',
+      refinancingSavesYou: 'Refinancing saves you',
+      overTheLifeOfYourLoan: 'over the life of your loan.',
+      callAgent: 'Call {agent} \u2014 Lock In Your Rate',
+      saveMo: 'Save {amount}/mo',
+      callAgentShort: '\uD83D\uDCDE Call {agent}',
+      messageFrom: 'A message from {agent}',
+      stepText1: '<strong>10-minute call</strong> \u2014 {agent} confirms your details and locks in your rate',
+      stepText2: '<strong>Send 3 documents</strong> \u2014 W2, paystub, and last 2 bank statements',
+      stepText3: '<strong>Close in 2\u20133 weeks</strong> \u2014 your savings start on your very first payment',
+      lowerRateBadge: '\u2193 {diff}% lower rate',
+      higherRateBadge: '\u2191 {diff}% higher rate',
+      sameRate: 'Same rate as current',
+      overpayingMsg: "You're overpaying ${amount}/mo compared to this new rate.",
+      breakevenCoversIn: 'Your monthly savings cover the closing costs in just',
+      breakevenPureProfit: 'After {time}, every dollar saved is pure profit.',
+      breakevenZeroCost: '$0 closing costs \u2014 savings start immediately from day one.',
+      investedOverTime: 'Your {amount} savings, invested over time:',
+      strategy: 'Strategy',
+      dragSlider: 'Drag the slider to see how extra payments crush your mortgage timeline.',
+      addingExtraNote: 'Adding ${extra}/mo extra pays off your loan {time} sooner and saves {savings} in total interest.',
+      accelNote: 'By keeping your current ${oldPay}/mo payment on the new loan, you pay it off {time} and save {savings} in interest.',
+      accelSaveMo: 'You save {amount}/mo with the new loan. But what if you kept making your current payment?',
+      chartSub: "Watch your balance drop faster month by month \u2014 the gap below is money you keep.",
+      chartCurrentLoan: 'Current Loan',
+      chartNewLoan: 'New Loan',
+      chartSavingsZone: 'Your Savings Zone',
+      chartBalance5yr: 'Balance @ 5 yrs',
+      chartBalance10yr: 'Balance @ 10 yrs',
+      chartEquityGained: 'Equity gained',
+      rateExpiredText: 'Rate has expired \u2014 call for updated quote',
+      rateExpiredMsg: '\u26A0 This rate has expired. Call for a new quote.',
+      equalHousingLender: '\uD83C\uDFE0 Equal Housing Lender',
+      licensedNmls: '\uD83D\uDD12 Licensed & NMLS Verified',
+      fiveStarRated: '\u2B50\u2B50\u2B50\u2B50\u2B50 5-Star Rated',
+      californiaLicensed: '\uD83D\uDCCD California Licensed',
+      timeSaved: '\u23F3 Time saved',
+      interestSavedEmoji: '\uD83D\uDCB5 Interest saved',
+    },
+    es: {
+      personalizedQuote: 'Cotizaci\u00F3n Personalizada',
+      yourCustomQuote: 'Su Cotizaci\u00F3n Personalizada',
+      hereIsHowMuch: 'As\u00ED es exactamente cu\u00E1nto podr\u00EDa estar ahorrando',
+      ratesValid: 'Tasas v\u00E1lidas por 72 horas',
+      rateLockExpires: 'La tasa expira en',
+      homeEquityPosition: 'Su Posici\u00F3n de Capital',
+      propertyValue: 'Valor de la Propiedad',
+      availableEquity: 'Capital Disponible',
+      creditRating: 'Puntaje de Cr\u00E9dito',
+      loanType: 'Tipo de Pr\u00E9stamo',
+      loanTerm: 'Plazo del Pr\u00E9stamo',
+      chooseYourPriority: 'Elija Su Prioridad',
+      lowerUpfrontCost: 'Menor Costo Inicial',
+      lowerCost: 'Menor Costo',
+      minimizeUpfront: 'Minimice costos iniciales',
+      bestRate: 'Mejor Tasa',
+      lowerRate: 'Menor Tasa',
+      saveMoreOverTime: 'Ahorre m\u00E1s con el tiempo',
+      currentLoan: 'Pr\u00E9stamo Actual',
+      newLoan: 'Pr\u00E9stamo Nuevo',
+      balance: 'Saldo',
+      interestRate: 'Tasa de Inter\u00E9s',
+      monthlyPayment: 'Pago Mensual',
+      loanAmount: 'Monto del Pr\u00E9stamo',
+      closingCosts: 'Costos de Cierre',
+      yourMonthlySavings: 'Su Ahorro Mensual',
+      perMonthBack: 'por mes de vuelta en su bolsillo',
+      oneYear: '1 A\u00F1o',
+      fiveYears: '5 A\u00F1os',
+      fullLoan: 'Pr\u00E9stamo Completo',
+      closingCostBreakeven: 'Punto de Equilibrio de Costos de Cierre',
+      totalCostCurrentLoan: 'Costo total \u2014 pr\u00E9stamo actual',
+      totalCostNewLoan: 'Costo total \u2014 pr\u00E9stamo nuevo',
+      netLifetimeSavings: 'Ahorro neto total',
+      everyMonthYouWait: 'Cada Mes Que Espera Le Cuesta Dinero',
+      oneMonth: '1 Mes',
+      threeMonths: '3 Meses',
+      sixMonths: '6 Meses',
+      yourNumbersDontLie: 'Sus n\u00FAmeros no mienten',
+      monthlySavings: 'Ahorro mensual',
+      annualSavings: 'Ahorro anual',
+      fiveYearSavings: 'Ahorro a 5 a\u00F1os',
+      totalInterestSaved: 'Total de inter\u00E9s ahorrado',
+      yearsCutOff: 'A\u00F1os menos en su pr\u00E9stamo',
+      noObligation: 'Sin compromiso \u2022 Consulta gratuita \u2022 Toma 10 minutos',
+      whatIfKeepPaying: '\u00BFQu\u00E9 Pasa Si Sigue Pagando Lo Mismo?',
+      standardPayoff: 'Pago Est\u00E1ndar',
+      acceleratedPayoff: 'Pago Acelerado',
+      atNewPayment: 'con pago nuevo',
+      keepingOldPayment: 'manteniendo pago anterior',
+      timeSavedOffLoan: 'Tiempo ahorrado',
+      interestSaved: 'Inter\u00E9s ahorrado',
+      loanBalanceOverTime: 'Balance del Pr\u00E9stamo en el Tiempo',
+      investHeaderLabel: '\uD83D\uDCB0 \u00BFQu\u00E9 Tal Si Invirtiera Sus Ahorros?',
+      investSub: 'En vez de sobrepagar su hipoteca actual, ponga ese dinero a trabajar. As\u00ED es como se acumula.',
+      powerPayTitle: 'Pago Acelerado \u2014 Destruya Su Hipoteca',
+      powerPaySub: 'Agregue cualquier monto extra cada mes y vea c\u00F3mo cambia su fecha de pago en tiempo real.',
+      extraPaymentPerMonth: 'Pago extra por mes',
+      standardPayoffLabel: 'Pago est\u00E1ndar',
+      withExtraPayment: 'Con pago extra',
+      whatHappensNext: 'Pr\u00F3ximos Pasos',
+      lockInYourRate: 'Asegure su tasa antes de que expire',
+      perMonth: 'por mes',
+      perYear: 'por a\u00F1o',
+      years: 'a\u00F1os',
+      totalSavingsOver1Year: 'Ahorro total en 1 a\u00F1o',
+      totalSavingsOverXYears: 'Ahorro total en {x} a\u00F1os',
+      totalSavingsOverLoan: 'Ahorro total durante la vida del pr\u00E9stamo',
+      everyDayYouWait: 'Cada d\u00EDa que espera:',
+      gone: 'perdido.',
+      refinancingSavesYou: 'Refinanciar le ahorra',
+      overTheLifeOfYourLoan: 'durante la vida de su pr\u00E9stamo.',
+      callAgent: 'Llame a {agent} \u2014 Asegure Su Tasa',
+      saveMo: 'Ahorre {amount}/mes',
+      callAgentShort: '\uD83D\uDCDE Llame a {agent}',
+      messageFrom: 'Un mensaje de {agent}',
+      stepText1: '<strong>Llamada de 10 minutos</strong> \u2014 {agent} confirma sus datos y asegura su tasa',
+      stepText2: '<strong>Env\u00EDe 3 documentos</strong> \u2014 W2, comprobante de pago y 2 estados de cuenta',
+      stepText3: '<strong>Cierre en 2\u20133 semanas</strong> \u2014 sus ahorros comienzan desde su primer pago',
+      lowerRateBadge: '\u2193 {diff}% menor tasa',
+      higherRateBadge: '\u2191 {diff}% mayor tasa',
+      sameRate: 'Misma tasa que la actual',
+      overpayingMsg: 'Est\u00E1 sobrepagando ${amount}/mes comparado con esta nueva tasa.',
+      breakevenCoversIn: 'Sus ahorros mensuales cubren los costos de cierre en solo',
+      breakevenPureProfit: 'Despu\u00E9s de {time}, cada d\u00F3lar ahorrado es ganancia pura.',
+      breakevenZeroCost: '$0 costos de cierre \u2014 los ahorros comienzan desde el primer d\u00EDa.',
+      investedOverTime: 'Sus {amount} de ahorro, invertidos con el tiempo:',
+      strategy: 'Estrategia',
+      dragSlider: 'Deslice para ver c\u00F3mo los pagos extra reducen su hipoteca.',
+      addingExtraNote: 'Agregando ${extra}/mes extra paga su pr\u00E9stamo {time} antes y ahorra {savings} en inter\u00E9s total.',
+      accelNote: 'Manteniendo su pago actual de ${oldPay}/mes en el pr\u00E9stamo nuevo, lo paga {time} y ahorra {savings} en inter\u00E9s.',
+      accelSaveMo: 'Usted ahorra {amount}/mes con el pr\u00E9stamo nuevo. \u00BFPero qu\u00E9 pasa si mantiene su pago actual?',
+      chartSub: 'Vea c\u00F3mo su saldo baja m\u00E1s r\u00E1pido mes a mes \u2014 la brecha es dinero que usted conserva.',
+      chartCurrentLoan: 'Pr\u00E9stamo Actual',
+      chartNewLoan: 'Pr\u00E9stamo Nuevo',
+      chartSavingsZone: 'Su Zona de Ahorro',
+      chartBalance5yr: 'Saldo @ 5 a\u00F1os',
+      chartBalance10yr: 'Saldo @ 10 a\u00F1os',
+      chartEquityGained: 'Capital ganado',
+      rateExpiredText: 'La tasa ha expirado \u2014 llame para una cotizaci\u00F3n actualizada',
+      rateExpiredMsg: '\u26A0 Esta tasa ha expirado. Llame para una nueva cotizaci\u00F3n.',
+      equalHousingLender: '\uD83C\uDFE0 Prestamista de Vivienda Justa',
+      licensedNmls: '\uD83D\uDD12 Licenciado y Verificado NMLS',
+      fiveStarRated: '\u2B50\u2B50\u2B50\u2B50\u2B50 5 Estrellas',
+      californiaLicensed: '\uD83D\uDCCD Licencia de California',
+      timeSaved: '\u23F3 Tiempo ahorrado',
+      interestSavedEmoji: '\uD83D\uDCB5 Inter\u00E9s ahorrado',
+    }
+  };
+
+  // ── TRANSLATION ENGINE ──
+  function t(key) {
+    var lang = currentLang || 'en';
+    return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || (TRANSLATIONS.en[key]) || key;
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    try { localStorage.setItem('wcl_lang', lang); } catch(e) {}
+
+    // Update toggle button states
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+    document.getElementById('langES').classList.toggle('active', lang === 'es');
+
+    // Apply translations to all data-i18n elements
+    applyLang();
+
+    // Re-render dynamic sections if quote view is active
+    if (document.getElementById('quoteView').style.display === 'block') {
+      renderOption();
+    }
+
+    // Track with GoatCounter
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: 'lang-switch-' + lang, title: 'Language Switch: ' + lang.toUpperCase(), event: true });
+    }
+  }
+
+  function applyLang() {
+    // Static data-i18n elements (textContent replacement)
+    var els = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < els.length; i++) {
+      var key = els[i].getAttribute('data-i18n');
+      if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) {
+        els[i].textContent = TRANSLATIONS[currentLang][key];
+      }
+    }
+
+    // Personalized greeting with name
+    var greetEl = document.getElementById('greetingName');
+    if (greetEl && quoteData && quoteData.name) {
+      greetEl.textContent = quoteData.name + ', ' + t('yourCustomQuote');
+    }
+
+    // Update term display
+    var termEl = document.getElementById('qTerm');
+    if (termEl && quoteData && quoteData.term) {
+      termEl.textContent = quoteData.term + ' ' + (currentLang === 'es' ? 'A\u00F1os' : 'Years');
+    }
+
+    // Equity bar labels
+    if (quoteData && quoteData.propVal) {
+      var equity = quoteData.propVal - quoteData.curBal;
+      var equityPct = quoteData.propVal > 0 ? Math.round((equity / quoteData.propVal) * 100) : 0;
+      var equPctEl = document.getElementById('equityPct');
+      var barOwedEl = document.getElementById('barOwed');
+      var barEquityEl = document.getElementById('barEquity');
+      if (equPctEl) equPctEl.textContent = equityPct + '% ' + (currentLang === 'es' ? 'capital' : 'equity');
+      if (barOwedEl) barOwedEl.textContent = (currentLang === 'es' ? 'Saldo: ' : 'Owed: ') + fmt(quoteData.curBal);
+      if (barEquityEl) barEquityEl.textContent = (currentLang === 'es' ? 'Capital: ' : 'Equity: ') + fmt(equity);
+    }
+
+    // Handle step text (innerHTML with HTML content)
+    var agent = (quoteData && quoteData.agent) || 'Manny';
+    var s1 = document.getElementById('stepText1');
+    var s2 = document.getElementById('stepText2');
+    var s3 = document.getElementById('stepText3');
+    if (s1) s1.innerHTML = t('stepText1').replace('{agent}', agent);
+    if (s2) s2.innerHTML = t('stepText2');
+    if (s3) s3.innerHTML = t('stepText3');
+
+    // Trust bar items
+    var trustItems = document.querySelectorAll('.trust-item');
+    if (trustItems.length >= 4) {
+      trustItems[0].textContent = t('equalHousingLender');
+      if (quoteData && quoteData.nmls) {
+        trustItems[1].textContent = '\uD83D\uDD12 NMLS #' + quoteData.nmls;
+      } else {
+        trustItems[1].textContent = t('licensedNmls');
+      }
+      trustItems[2].textContent = t('fiveStarRated');
+      trustItems[3].textContent = t('californiaLicensed');
+    }
+
+    // Power pay time/interest labels
+    var ppTimeSavedRow = document.querySelector('#ppTimeSaved');
+    var ppIntSavedRow = document.querySelector('#ppIntSaved');
+    if (ppTimeSavedRow && ppTimeSavedRow.closest) {
+      var tsLabel = ppTimeSavedRow.closest('.powerpay-row');
+      if (tsLabel) {
+        var span = tsLabel.querySelector('span:first-child');
+        if (span) span.textContent = t('timeSaved');
+      }
+      var isLabel = ppIntSavedRow ? ppIntSavedRow.closest('.powerpay-row') : null;
+      if (isLabel) {
+        var span2 = isLabel.querySelector('span:first-child');
+        if (span2) span2.textContent = t('interestSavedEmoji');
+      }
+    }
+
+    // Chart labels
+    var chartLegend = document.querySelector('.chart-legend');
+    if (chartLegend) {
+      var spans = chartLegend.querySelectorAll('span');
+      if (spans.length >= 3) {
+        // Preserve the legend dots, just update text after them
+        spans[0].innerHTML = '<span class="legend-dot" style="background:#D1D5DB"></span>' + t('chartCurrentLoan');
+        spans[1].innerHTML = '<span class="legend-dot" style="background:#7B61FF"></span>' + t('chartNewLoan');
+        spans[2].innerHTML = '<span class="legend-dot" style="background:rgba(74,222,128,0.5);border-radius:2px;width:14px;height:10px"></span>' + t('chartSavingsZone');
+      }
+    }
+
+    // Chart stat labels
+    var statLabels = document.querySelectorAll('.chart-stat-label');
+    if (statLabels.length >= 3) {
+      statLabels[0].textContent = t('chartBalance5yr');
+      statLabels[1].textContent = t('chartBalance10yr');
+      statLabels[2].textContent = t('chartEquityGained');
+    }
+
+    // Chart description
+    var chartSubEl = document.querySelector('.chart-sub');
+    if (chartSubEl) chartSubEl.textContent = t('chartSub');
+
+    // Invest table header
+    var investTh = document.querySelector('.invest-table th:first-child');
+    if (investTh) investTh.textContent = t('strategy');
+
+    // Breakeven sub text (contains a strong tag)
+    var beSubEl = document.getElementById('breakevenSubText');
+    if (beSubEl) {
+      var beMo = document.getElementById('breakevenMonths');
+      var beVal = beMo ? beMo.textContent : '\u2014';
+      beSubEl.innerHTML = t('breakevenCoversIn') + ' <strong id="breakevenMonths" style="color:var(--accent)">' + beVal + '</strong>';
+    }
+
+    // Invest title (contains a span)
+    var investTitleEl = document.querySelector('.invest-title');
+    if (investTitleEl) {
+      var investMonthlySpan = document.getElementById('investMonthly');
+      var monthlyText = investMonthlySpan ? investMonthlySpan.textContent : '$\u2014/mo';
+      investTitleEl.innerHTML = t('investedOverTime').replace('{amount}', '<span id="investMonthly" style="color:#4ADE80">' + monthlyText + '</span>');
+    }
+  }
 
   // ── FORMAT ──
   function fmt(n) {
@@ -2187,7 +2558,14 @@
 
   // ── SAVINGS USE HINT ──
   function savingsUseText(annual) {
-    if (annual >= 10000) return 'That\'s enough for a <span>family vacation every year</span> — fully paid.';
+    if (currentLang === 'es') {
+      if (annual >= 10000) return 'Eso es suficiente para unas <span>vacaciones familiares cada a\u00F1o</span> \u2014 totalmente pagadas.';
+      if (annual >= 5000)  return 'Eso es m\u00E1s de <span>$400/mes</span> que podr\u00EDa destinar a su retiro o la universidad de sus hijos.';
+      if (annual >= 3000)  return 'Eso es un <span>pago de auto completo</span> cubierto cada mes.';
+      if (annual >= 1200)  return 'Eso son sus <span>facturas de servicios</span> cubiertas por el a\u00F1o.';
+      return 'Es dinero real <span>de vuelta en su bolsillo</span> cada mes.';
+    }
+    if (annual >= 10000) return 'That\'s enough for a <span>family vacation every year</span> \u2014 fully paid.';
     if (annual >= 5000)  return 'That\'s over <span>$400/month</span> you could put toward retirement or your kids\' college.';
     if (annual >= 3000)  return 'That\'s a <span>full car payment</span> covered every month.';
     if (annual >= 1200)  return 'That\'s your <span>utility bills</span> covered for the year.';
@@ -2430,6 +2808,10 @@
     if (code === ACCESS_CODE) {
       document.getElementById('gateView').style.display = 'none';
       document.getElementById('adminView').style.display = 'block';
+      document.getElementById('langToggle').style.display = 'flex';
+      try { currentLang = localStorage.getItem('wcl_lang') || 'en'; } catch(e) { currentLang = 'en'; }
+      document.getElementById('langEN').classList.toggle('active', currentLang === 'en');
+      document.getElementById('langES').classList.toggle('active', currentLang === 'es');
       loadSavedAgentInfo();
       updateQuotaDisplay();
     } else {
@@ -2550,7 +2932,7 @@
 
     // Greeting
     if (quoteData.name) {
-      document.getElementById('greetingName').textContent = quoteData.name + ", Here's Your Custom Quote";
+      document.getElementById('greetingName').textContent = quoteData.name + ', ' + t('yourCustomQuote');
     }
 
     // Equity bar
@@ -2568,7 +2950,7 @@
     document.getElementById('qEquity').textContent  = fmt(equity);
     document.getElementById('qCredit').textContent  = quoteData.credit;
     document.getElementById('qLoanType').textContent = quoteData.loanType;
-    document.getElementById('qTerm').textContent    = quoteData.term + ' Years';
+    document.getElementById('qTerm').textContent    = quoteData.term + ' ' + (currentLang === 'es' ? 'A\u00F1os' : 'Years');
 
     // Current loan
     document.getElementById('qCurBal').textContent  = fmt(quoteData.curBal);
@@ -2602,6 +2984,13 @@
     if (quoteData.aCost >= 0) document.getElementById('recBadgeA').style.display = 'block';
     if (quoteData.bRate < quoteData.aRate) document.getElementById('recBadgeB').style.display = 'block';
 
+    // Initialize language
+    try { currentLang = localStorage.getItem('wcl_lang') || 'en'; } catch(e) { currentLang = 'en'; }
+    document.getElementById('langEN').classList.toggle('active', currentLang === 'en');
+    document.getElementById('langES').classList.toggle('active', currentLang === 'es');
+    document.getElementById('langToggle').style.display = 'flex';
+    applyLang();
+
     renderOption();
   }
 
@@ -2625,13 +3014,13 @@
     var rateDiff = d.curRate - rate;
     var rateDiffEl = document.getElementById('qRateDiff');
     if (rateDiff > 0) {
-      rateDiffEl.textContent = '\u2193 ' + rateDiff.toFixed(2) + '% lower rate';
+      rateDiffEl.textContent = t('lowerRateBadge').replace('{diff}', rateDiff.toFixed(2));
       rateDiffEl.style.background = '#EFF6FF'; rateDiffEl.style.color = '#1D4ED8';
     } else if (rateDiff < 0) {
-      rateDiffEl.textContent = '\u2191 ' + Math.abs(rateDiff).toFixed(2) + '% higher rate';
+      rateDiffEl.textContent = t('higherRateBadge').replace('{diff}', Math.abs(rateDiff).toFixed(2));
       rateDiffEl.style.background = '#FEF2F2'; rateDiffEl.style.color = '#DC2626';
     } else {
-      rateDiffEl.textContent = 'Same rate as current';
+      rateDiffEl.textContent = t('sameRate');
       rateDiffEl.style.background = '#F3F4F6'; rateDiffEl.style.color = '#6B7280';
     }
 
@@ -2649,7 +3038,7 @@
     var monthlySave = d.curPay - pay;
 
     // Savings badge on card
-    document.getElementById('qSaveBadge').textContent = '\u2193 ' + fmt(monthlySave) + '/mo';
+    document.getElementById('qSaveBadge').textContent = '\u2193 ' + fmt(monthlySave) + '/' + (currentLang === 'es' ? 'mes' : 'mo');
 
     // Animate monthly savings number
     countUp(document.getElementById('qSaveMonth'), monthlySave, '$', 800);
@@ -2658,6 +3047,11 @@
     renderChart();
     renderInvestment();
     renderPowerPay(parseInt((document.getElementById('powerPaySlider') || {value:'0'}).value) || 0);
+    renderBreakeven();
+    renderAccelPayoff();
+    renderWaiting();
+    renderCloser();
+    applyLang();
   }
 
   function setOption(opt) {
@@ -2673,11 +3067,11 @@
     var label;
     if (years === 0) {
       years = quoteData.term;
-      label = 'Total savings over the life of the loan';
+      label = t('totalSavingsOverLoan');
     } else if (years === 1) {
-      label = 'Total savings over 1 year';
+      label = t('totalSavingsOver1Year');
     } else {
-      label = 'Total savings over ' + years + ' years';
+      label = t('totalSavingsOverXYears').replace('{x}', years);
     }
 
     var total = monthlySave * 12 * years;
@@ -2890,19 +3284,26 @@
     var accelInterest = (oldPay * accelMonths) - newLoan;
     var interestSaved = stdInterest - accelInterest;
 
+    var yrsWord = currentLang === 'es' ? 'a\u00F1os antes' : 'yrs earlier';
+    var mosWord = currentLang === 'es' ? 'meses antes' : 'months earlier';
     var ysText = yearsSaved >= 1
-      ? yearsSaved.toFixed(1) + ' yrs earlier'
-      : Math.round(monthsSaved) + ' months earlier';
+      ? yearsSaved.toFixed(1) + ' ' + yrsWord
+      : Math.round(monthsSaved) + ' ' + mosWord;
 
     document.getElementById('accelMonthlySave').textContent = fmt(monthlySave);
-    document.getElementById('accelStdYears').textContent    = stdYears.toFixed(1) + ' yrs';
-    document.getElementById('accelAccelYears').textContent  = accelYears.toFixed(1) + ' yrs';
+    var accelSubEl = document.getElementById('accelSubText');
+    if (accelSubEl) {
+      var subParts = t('accelSaveMo').split('{amount}');
+      accelSubEl.innerHTML = subParts[0] + '<span id="accelMonthlySave">' + fmt(monthlySave) + '</span>' + subParts[1];
+    }
+    document.getElementById('accelStdYears').textContent    = stdYears.toFixed(1) + ' ' + (currentLang === 'es' ? 'a\u00F1os' : 'yrs');
+    document.getElementById('accelAccelYears').textContent  = accelYears.toFixed(1) + ' ' + (currentLang === 'es' ? 'a\u00F1os' : 'yrs');
     document.getElementById('accelYearsSaved').textContent  = ysText;
     document.getElementById('accelIntSaved').textContent    = fmt(interestSaved);
     document.getElementById('accelNote').textContent =
-      'By keeping your current $' + Math.round(oldPay).toLocaleString('en-US') +
-      '/mo payment on the new loan, you pay it off ' + ysText +
-      ' and save ' + fmt(interestSaved) + ' in interest.';
+      t('accelNote').replace('${oldPay}', Math.round(oldPay).toLocaleString('en-US'))
+        .replace('{time}', ysText)
+        .replace('{savings}', fmt(interestSaved));
   }
 
   // ── BREAKEVEN + TOTAL COST ──
@@ -2923,7 +3324,9 @@
     section.style.display = 'block';
 
     var breakevenMonths = cost > 0 ? Math.ceil(cost / monthlySave) : 0;
-    var beText = breakevenMonths <= 1 ? '1 month' : breakevenMonths + ' months';
+    var moWord = currentLang === 'es' ? 'mes' : 'month';
+    var mosWord = currentLang === 'es' ? 'meses' : 'months';
+    var beText = breakevenMonths <= 1 ? '1 ' + moWord : breakevenMonths + ' ' + mosWord;
     document.getElementById('breakevenMonths').textContent = beText;
 
     // Breakeven bar
@@ -2931,15 +3334,15 @@
     setTimeout(function() {
       document.getElementById('breakevenBar').style.width = barPct + '%';
     }, 300);
-    document.getElementById('breakevenLabel').textContent = 'Breakeven: ' + beText;
-    document.getElementById('breakevenTermLabel').textContent = term + ' yrs';
+    var beLabel = currentLang === 'es' ? 'Equilibrio: ' : 'Breakeven: ';
+    document.getElementById('breakevenLabel').textContent = beLabel + beText;
+    document.getElementById('breakevenTermLabel').textContent = term + ' ' + (currentLang === 'es' ? 'a\u00F1os' : 'yrs');
 
     if (cost > 0) {
       document.getElementById('breakevenNote').textContent =
-        'After ' + beText + ', every dollar saved is pure profit.';
+        t('breakevenPureProfit').replace('{time}', beText);
     } else {
-      document.getElementById('breakevenNote').textContent =
-        '$0 closing costs — savings start immediately from day one.';
+      document.getElementById('breakevenNote').textContent = t('breakevenZeroCost');
     }
 
     // Total cost of loan comparison
@@ -3003,7 +3406,7 @@
     var nm   = document.getElementById('agentNoteName');
     var tx   = document.getElementById('agentNoteText');
     av.textContent  = agent ? agent.charAt(0).toUpperCase() : 'M';
-    nm.textContent  = 'A message from ' + (agent || 'Manny');
+    nm.textContent  = t('messageFrom').replace('{agent}', agent || 'Manny');
     tx.textContent  = '"' + note + '"';
     wrap.style.display = 'block';
   }
@@ -3017,13 +3420,13 @@
     if (monthlySave <= 0) { ws.style.display = 'none'; return; }
     ws.style.display = 'block';
     document.getElementById('waitingSub').textContent =
-      'You\'re overpaying $' + Math.round(monthlySave).toLocaleString('en-US') + '/mo compared to this new rate.';
+      t('overpayingMsg').replace('${amount}', Math.round(monthlySave).toLocaleString('en-US'));
     document.getElementById('wait1mo').textContent = fmt(monthlySave);
     document.getElementById('wait3mo').textContent = fmt(monthlySave * 3);
     document.getElementById('wait6mo').textContent = fmt(monthlySave * 6);
     var daily = monthlySave / 30;
     document.getElementById('waitingDaily').innerHTML =
-      'Every day you wait: <strong>' + fmt(daily) + '</strong> gone.';
+      t('everyDayYouWait') + ' <strong>' + fmt(daily) + '</strong> ' + t('gone');
   }
 
   // ── THE CLOSER ──
@@ -3051,23 +3454,23 @@
 
     document.getElementById('closerLifetime').textContent  = fmt(lifetime);
     document.getElementById('closerHeadline').innerHTML    =
-      'Refinancing saves you <span style="color:#4ADE80">' + fmt(lifetime) + '</span> over the life of your loan.';
-    document.getElementById('closerMonthly').textContent   = fmt(monthlySave) + '/mo';
-    document.getElementById('closerAnnual').textContent    = fmt(annual) + '/yr';
+      t('refinancingSavesYou') + ' <span style="color:#4ADE80">' + fmt(lifetime) + '</span> ' + t('overTheLifeOfYourLoan');
+    document.getElementById('closerMonthly').textContent   = fmt(monthlySave) + '/' + (currentLang === 'es' ? 'mes' : 'mo');
+    document.getElementById('closerAnnual').textContent    = fmt(annual) + '/' + (currentLang === 'es' ? 'a\u00F1o' : 'yr');
     document.getElementById('closer5yr').textContent       = fmt(fiveYr);
     document.getElementById('closerInterest').textContent  = fmt(intSaved);
-    document.getElementById('closerYears').textContent     = yearsSaved > 0 ? yearsSaved.toFixed(1) + ' yrs' : '—';
+    document.getElementById('closerYears').textContent     = yearsSaved > 0 ? yearsSaved.toFixed(1) + ' ' + (currentLang === 'es' ? 'a\u00F1os' : 'yrs') : '—';
 
     // CTA
     var agent = d.agent || 'Manny';
-    document.getElementById('closerCtaText').textContent = 'Call ' + agent + ' — Lock In Your Rate';
+    document.getElementById('closerCtaText').textContent = t('callAgent').replace('{agent}', agent);
     var ctaEl = document.getElementById('closerCtaBtn');
     if (d.phone) ctaEl.href = 'tel:+1' + d.phone;
 
     // Sticky bar
-    document.getElementById('stickySave').textContent = 'Save ' + fmt(monthlySave) + '/mo';
+    document.getElementById('stickySave').textContent = t('saveMo').replace('{amount}', fmt(monthlySave));
     var stickyBtn = document.getElementById('stickyBtn');
-    stickyBtn.textContent = '📞 Call ' + agent;
+    stickyBtn.textContent = t('callAgentShort').replace('{agent}', agent);
     if (d.phone) stickyBtn.href = 'tel:+1' + d.phone;
     // Show sticky bar after 2 seconds
     setTimeout(function() {
@@ -3086,8 +3489,8 @@
       var now  = Date.now();
       var diff = expiry - now;
       if (diff <= 0) {
-        document.getElementById('expiryText').textContent = 'Rate has expired — call for updated quote';
-        document.getElementById('countdownWrap').innerHTML = '<div style="color:#EF4444;font-weight:700;font-size:13px;margin-top:6px">⚠ This rate has expired. Call for a new quote.</div>';
+        document.getElementById('expiryText').textContent = t('rateExpiredText');
+        document.getElementById('countdownWrap').innerHTML = '<div style="color:#EF4444;font-weight:700;font-size:13px;margin-top:6px">' + t('rateExpiredMsg') + '</div>';
         return;
       }
       var h = Math.floor(diff / 3600000);
@@ -3229,8 +3632,9 @@
     if (monthlySave < 15) { section.style.display = 'none'; return; }
     section.style.display = 'block';
 
-    document.getElementById('investMonthly').textContent = '$' + Math.round(monthlySave).toLocaleString('en-US') + '/mo';
-    document.getElementById('investTermHeader').textContent = d.term + ' Yrs';
+    var moSuffix = currentLang === 'es' ? '/mes' : '/mo';
+    document.getElementById('investMonthly').textContent = '$' + Math.round(monthlySave).toLocaleString('en-US') + moSuffix;
+    document.getElementById('investTermHeader').textContent = d.term + ' ' + (currentLang === 'es' ? 'A\u00F1os' : 'Yrs');
 
     var strategies = [
       { name: '🏦 HYSA (4.5% APY)',         rate: 4.5,  cls: '' },
@@ -3305,26 +3709,28 @@
     var accelInt = ((newPay + extra) * accelMonths) - newLoan;
     var intSaved = Math.max(0, stdInt - accelInt);
 
+    var yrsWord = currentLang === 'es' ? 'a\u00F1os' : 'years';
+    var mosWord = currentLang === 'es' ? 'meses' : 'months';
+    var moWord  = currentLang === 'es' ? 'mes' : 'mo';
+    var soonerWord = currentLang === 'es' ? 'antes' : 'sooner';
     var savedText = yearsSaved >= 1
-      ? yearsSaved.toFixed(1) + ' years'
-      : Math.round(monthsSaved) + ' months';
+      ? yearsSaved.toFixed(1) + ' ' + yrsWord
+      : Math.round(monthsSaved) + ' ' + mosWord;
 
     var accelText = extra > 0
-      ? (accelYrs > 0 ? accelYrs + ' yrs' + (accelMoRem > 0 ? ' ' + accelMoRem + ' mo' : '') : accelMoRem + ' months')
-      : stdYrs + ' years';
+      ? (accelYrs > 0 ? accelYrs + ' ' + (currentLang === 'es' ? 'a\u00F1os' : 'yrs') + (accelMoRem > 0 ? ' ' + accelMoRem + ' ' + moWord : '') : accelMoRem + ' ' + mosWord)
+      : stdYrs + ' ' + yrsWord;
 
-    document.getElementById('ppStdPayoff').textContent   = stdYrs + ' years';
+    document.getElementById('ppStdPayoff').textContent   = stdYrs + ' ' + yrsWord;
     document.getElementById('ppAccelPayoff').textContent = accelText;
-    document.getElementById('ppTimeSaved').textContent   = extra > 0 ? savedText + ' sooner' : '—';
+    document.getElementById('ppTimeSaved').textContent   = extra > 0 ? savedText + ' ' + soonerWord : '—';
     document.getElementById('ppIntSaved').textContent    = extra > 0 ? fmt(intSaved) : '—';
 
     if (extra > 0) {
       document.getElementById('powerPayNote').textContent =
-        'Adding $' + extra + '/mo extra pays off your loan ' + savedText +
-        ' sooner and saves ' + fmt(intSaved) + ' in total interest.';
+        t('addingExtraNote').replace('${extra}', extra).replace('{time}', savedText).replace('{savings}', fmt(intSaved));
     } else {
-      document.getElementById('powerPayNote').textContent =
-        'Drag the slider to see how extra payments crush your mortgage timeline.';
+      document.getElementById('powerPayNote').textContent = t('dragSlider');
     }
   }
 
